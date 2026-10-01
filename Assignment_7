@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class person
+{
+ public:
+ string name;
+ int age;
+ void display()
+ {
+  cout<<"------Person Information------"<<endl;
+  cout<<"NAME:"<<name<<endl;
+  cout<<"AGE:"<<age<<endl;
+ }
+};
+class employee:public person
+{
+ public:
+ int eid;
+ int workinghour;
+ void show()
+ {
+  cout<<"------Employee Information------"<<endl;
+  cout<<"EMPLOYEE ID:"<<eid<<endl;
+  cout<<"WORKINGHOUR:"<<workinghour<<endl;
+ }
+};
+class manager:public employee
+{
+ public:
+ int salary;
+ void info()
+ {
+  cout<<"------Manager Information------"<<endl;
+  cout<<"SALARY:"<<salary<<endl;
+ }
+};
+int main()
+{
+ manager m1;
+ m1.name="RAJ";
+ m1.age=46;
+ m1.eid=789;
+ m1.workinghour=8;
+ m1.salary=50000;
+ m1.display();
+ m1.show();
+ m1.info();
+ return 0;
+}
