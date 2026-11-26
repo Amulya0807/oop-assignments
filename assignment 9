@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+class Vehicle
+{
+public:
+    string brand;
+    int speed;
+
+    void start()
+    {
+        cout << "Vehicle started" << endl;
+    }
+};
+
+class Car : public Vehicle
+{
+public:
+    int seats;
+
+    void stop()
+    {
+        cout << "Car stopped" << endl;
+    }
+};
+
+class Bike : public Vehicle
+{
+public:
+    int mileage;
+
+    void ride()
+    {
+        cout << "Bike is running" << endl;
+    }
+};
+
+int main()
+{
+    Car c;
+    Bike b;
+
+    c.brand = "Honda";
+    c.speed = 120;
+    c.seats = 4;
+
+    b.brand = "Yamaha";
+    b.speed = 80;
+    b.mileage = 45;
+
+    c.start();
+    c.stop();
+
+    cout << "Car brand: " << c.brand << endl;
+    cout << "Car speed: " << c.speed << endl;
+    cout << "Car seats: " << c.seats << endl;
+
+    b.start();
+    b.ride();
+
+    cout << "Bike brand: " << b.brand << endl;
+    cout << "Bike speed: " << b.speed << endl;
+    cout << "Bike mileage: " << b.mileage << endl;
+
+    return 0;
+}
